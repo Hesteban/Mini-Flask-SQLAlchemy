@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block subcontent %}
+    <div class="jumbotron">
+        <h2>Users registered in the app</h2>
+    </div>
+    <div>
+        <p></p>
+    </div>
+    <div>
+       <table class="table" >
+           {%for user in users %}
+            <tr>
+              <td>{{user.role.role}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.password}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <a href="/users" class="btn btn-info" role="button">Go to add user</a>
+        </div>
+    </div>
+{% endblock %}

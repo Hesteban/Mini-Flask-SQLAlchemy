@@ -1,13 +1,14 @@
-from models.users import User
 from app import app
 from db import db
+from models.roles import Role
+from models.users import User
 
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 with app.app_context():
-    admin = User(username='admin', password='admin', email='admin@test.com')
-    guest = User(username='guest', password='guest', email='guest@test.com')
+    #admin = User(username='admin', password='admin', email='admin@test.com')
+    #guest = User(username='guest', password='guest', email='guest@test.com')
+    admin = Role(role='admin')
+    user = Role(role='user')
     db.session.add(admin)
-    db.session.add(guest)
+    db.session.add(user)
     db.session.commit()
-    print(User.query.all())
+    print(Role.query.all())

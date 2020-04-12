@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 {% block subcontent %}
     <div class="jumbotron">
-        <h1>User Registration</h1>
+        <h1>User Login</h1>
     </div>
     <div>
         <p></p>
     </div>
     <div>
        <form class="form-horizontal" method="POST">
-           Email:<input type="email" class="form-control" name="email" placeholder="Enter email"/>
-           Password:<input type="password" class="form-control" name="pwd" placeholder="Enter password"/>
            Username:<input type="username" class="form-control" name="username" placeholder="Enter username"/>
-           Role:<input type="role" class="form-control" name="role" placeholder="Enter your rol"/>
+           Password:<input type="password" class="form-control" name="pwd" placeholder="Enter password"/>
            <p></p>
            <input type="submit" class="btn btn-primary"/>
        </form>

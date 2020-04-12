@@ -1,9 +1,22 @@
 {% extends "bootstrap/base.html" %}
+
 {% block title %}
 Flask-Bootstrap project
 {% endblock %}
+
+{% block navbar %}
+    {% include '_navbar.html' %}
+{% endblock %}
+
 {% block content %}
-    {% block body %}
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">{{message}}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block subcontent %}
     {% endblock %}
 {% endblock %}
 
